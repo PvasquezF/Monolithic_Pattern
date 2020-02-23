@@ -84,16 +84,4 @@ const User = db.define('usuarios', {
     }
 });
 
-User.prototype.getSignedJwtToken = function() {
-    return jwt.sign({
-        userId: this.userId
-    }, process.env.JWT_SECRET, {
-        expiresIn: process.env.JWT_EXPIRE
-    })
-};
-
-User.prototype.matchPassword = async function(enteredPassword) {
-    return await bcrypt.compare(enteredPassword, this.Contrasena);
-};
-
 module.exports = User;
