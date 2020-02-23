@@ -1,9 +1,8 @@
 # Monolithic_Pattern
 Aplicación para mostrar como funciona el patron monolito
 
-# endpoint /api/v1/auth/registro
-POST REQUEST
-BODY
+##### endpoint /api/v1/auth/registro - Post Request
+```json
 {
 	"User_Name":"pvasquezf",
 	"Correo_Electronico":"alexanderpavelv32@gmail.com",
@@ -17,3 +16,4 @@ BODY
 	"Ciudad":"Guatemala",
 	"Contrasena":"12345"
 }
+```
