@@ -1,0 +1,28 @@
+{
+  "name": "monolithic_pattern",
+  "version": "1.0.0",
+  "description": "Aplicacion del patron monolitico",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PvasquezF/Monolithic_Pattern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PvasquezF/Monolithic_Pattern/issues"
+  },
+  "homepage": "https://github.com/PvasquezF/Monolithic_Pattern#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.5"
+  }
+}
