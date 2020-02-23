@@ -3,8 +3,8 @@ require('dotenv').config();
 module.exports = {
     "development": {
         "username": 'root',
-        "password": '12345',
-        "database": 'lcs',
+        "password": 'root',
+        "database": 'db_pazhub',
         "host": 'localhost',
         "dialect": "mysql"
     },
