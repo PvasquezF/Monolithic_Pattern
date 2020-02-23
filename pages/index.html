@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Working with HTML Forms</title>
@@ -7,52 +8,62 @@
     <style>
         *,
         *::after,
-        *:before{
+        *:before {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-        html{
-            font:normal 20px/1.5 sans-serif;
+        
+        html {
+            font: normal 20px/1.5 sans-serif;
         }
-        h1{
+        
+        h1 {
             margin: 1rem 2rem;
         }
-        form{
+        
+        form {
             margin: 2rem;
             width: 800px;
         }
-        .form-box{
+        
+        .form-box {
             padding: 1rem;
             clear: both;
             width: 100%;
             position: relative;
         }
-        .form-box label{
+        
+        .form-box label {
             font-size: 1rem;
             float: left;
             width: 100px;
             margin-right: 20px;
         }
-        .form-box input{
+        
+        .form-box input {
             font-size: 1rem;
             width: 300px;
             padding: 0.25rem 1rem;
         }
-        .form-box select{
+        
+        .form-box select {
             font-size: 1rem;
             width: 300px;
             padding: 0.25rem 1rem;
         }
-        .form-box option{
+        
+        .form-box option {
             font-size: 1rem;
             width: 300px;
             padding: 0.25rem 1rem;
         }
-        .form-box input[type="checkbox"]{
+        
+        .form-box input[type="checkbox"] {
             font-size: 1rem;
         }
-        .form-box button{
+        
+        .form-box button {
             font-size: 1rem;
             border: none;
             padding: 0.25rem 2rem;
@@ -62,77 +73,79 @@
             cursor: pointer;
         }
         
-        .error::after{
+        .error::after {
             background-color: hsl(10, 60%, 50%);
             color: papayawhip;
             font-size: 1rem;
             line-height: 1.8;
             width: 350px;
             padding-left: 1rem;
-            position:absolute;
+            position: absolute;
             right: 0;
             content: attr(data-errormsg);
         }
     </style>
 </head>
+
 <body>
     <h1>Crear Usuario</h1>
-    
-    <form id="form-registro" action="http://localhost:3000/registro" method="post">
+
+    <form id="form-registro" action="http://localhost:3000/api/v1/auth/registro" method="POST">
         <div class="form-box error" data-errormsg="">
             <label for="input-username">User Name</label>
-            <input type="text" id="input-username" autofocus placeholder="Pazhuber69" tabindex="1"/>
+            <input type="text" id="User_Name" name="User_Name" autofocus placeholder="Pazhuber69" tabindex="1" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-Password">Password</label>
-            <input type="password" id="input-Password" required placeholder="Pazito1234" tabindex="3" />
+            <input type="password" id="Contrasena" name="Contrasena" required placeholder="Pazito1234" tabindex="3" />
         </div>
         <div class="form-box" data-errormsg="">
             <label for="input-correo">Correo</label>
-            <input type="email" id="input-correo" required placeholder="Correo" tabindex="3" />
+            <input type="email" id="Correo_Electronico" name="Correo_Electronico" required placeholder="Correo" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-PrimerNombre">Primer Nombre</label>
-            <input type="text" id="input-PrimerNombre" required placeholder="Fernando" tabindex="3" />
+            <input type="text" id="Primer_Nombre" name="Primer_Nombre" required placeholder="Fernando" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-SegundoNombre">Segundo Nombre</label>
-            <input type="text" id="input-SegundoNombre" required placeholder="Jose" tabindex="3" />
+            <input type="text" id="Segundo_Nombre" name="Segundo_Nombre" required placeholder="Jose" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-PrimerApellido">Primer Apellido</label>
-            <input type="text" id="input-PrimerApellido" required placeholder="Paz" tabindex="3" />
+            <input type="text" id="Primer_Apellido" name="Primer_Apellido" required placeholder="Paz" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-SegundoApellido">Segundo Apellido</label>
-            <input type="text" id="input-SegundoApellido" required placeholder="González" tabindex="3" />
+            <input type="text" id="Segundo_Apellido" name="Segundo_Apellido" required placeholder="González" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-Telefono">Telefono</label>
-            <input type="number" id="input-Telefono " required placeholder="12345678" tabindex="3" />
+            <input type="number" id="Telefono" name="Telefono" required placeholder="12345678" tabindex="3" />
         </div>
-		<div class="form-box" data-errormsg="">
+        <div class="form-box" data-errormsg="">
             <label for="input-Fechanac">Fecha Nacimiento</label>
-            <input type="date" id="input-Fechanac" min="1950-12-31" max="2019-12-31" required  tabindex="3" />
-        </div> 
+            <input type="date" id="Fecha_Nacimiento" name="Fecha_Nacimiento" min="1950-12-31" max="2019-12-31" required tabindex="3" />
+        </div>
 
-		
+
         <div class="form-box" data-errormsg="">
             <label for="input-Pais">Pais</label>
-            <select id="input-Pais" tabindex="4">
+            <select id="Pais" name="Pais" tabindex="4">
                 <option value="0">Guatemala</option>
                 <option value="1">Otro</option>
             </select>
-        </div>		
-		<div class="form-box" data-errormsg="">
+        </div>
+        <div class="form-box" data-errormsg="">
             <label for="input-Ciudad">Ciudad</label>
-            <input type="text" id="input-Ciudad" required placeholder="Guatemala" tabindex="3" />
+            <input type="text" id="Ciudad" name="Ciudad" required placeholder="Guatemala" tabindex="3" />
         </div>
         <div class="form-box">
             <button id="button-Cancelar">Cancelar</button>
             <button id="button-Enviar">Enviar</button>
         </div>
     </form>
-   
+
 </body>
+
 </html>

@@ -21,10 +21,11 @@ exports.registro = asyncHandler(async(req, res, next) => {
 
     if (!User_Name || !Correo_Electronico || !Primer_Nombre || !Segundo_Nombre || !Primer_Apellido || !Segundo_Apellido ||
         !Telefono || !Fecha_Nacimiento || !Pais || !Ciudad || !Contrasena) {
-        res.status(400).json({
-            estado: false,
-            error: `User_Name, Correo_Electronico, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Fecha_Nacimiento, Pais, Ciudad, Contrasena son necesarios!!`
-        });
+        //res.status(400).json({
+        //    estado: false,
+        //    error: `User_Name, Correo_Electronico, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Fecha_Nacimiento, Pais, Ciudad, Contrasena son necesarios!!`
+        //});
+        return res.send(`Error: User_Name, Correo_Electronico, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Fecha_Nacimiento, Pais, Ciudad, Contrasena son necesarios!!`);
     }
 
     // verificar correo
@@ -35,10 +36,11 @@ exports.registro = asyncHandler(async(req, res, next) => {
     });
 
     if (exists) {
-        return res.status(400).json({
-            estado: false,
-            error: `El correo ingresado ya existe.`
-        });
+        //return res.status(400).json({
+        //    estado: false,
+        //    error: `El correo ingresado ya existe.`
+        //});
+        return res.send('El correo ingresado ya existe.')
     }
     exists = undefined;
     // verificar user name
@@ -49,10 +51,11 @@ exports.registro = asyncHandler(async(req, res, next) => {
     });
 
     if (exists) {
-        return res.status(400).json({
-            estado: false,
-            error: `El nombre de usuario ingresado ya existe.`
-        });
+        //return res.status(400).json({
+        //    estado: false,
+        //    error: `El nombre de usuario ingresado ya existe.`
+        //});
+        return res.send('El nombre de usuario ingresado ya existe.')
     }
 
     // crear usuario
@@ -60,16 +63,13 @@ exports.registro = asyncHandler(async(req, res, next) => {
     try {
         user = await User.create(req.body);
     } catch (error) {
-        return res.status(400).json({
-            estado: false,
-            error: error
-        });
+        //return res.status(400).json({
+        //    estado: false,
+        //    error: error
+        //});
+        return res.send(error);
     }
 
     // create token
-    res.status(201).json({
-        success: true,
-        message: 'Usuario creado correctamente!.',
-        data: user
-    });
+    res.send("Usuario registrado");
 });
