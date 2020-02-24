@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const asyncHandler = require('../middleware/asyncHandler');
+var express = require('express');
+var body_parser = require('body-parser');
 
 // @desc    crear nuevo usuario
 // @route   POST /api/auth/registro
@@ -73,3 +75,4 @@ exports.registro = asyncHandler(async(req, res, next) => {
     // create token
     res.send("Usuario registrado");
 });
+
