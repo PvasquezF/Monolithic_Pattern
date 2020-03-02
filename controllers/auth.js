@@ -76,3 +76,15 @@ exports.registro = asyncHandler(async(req, res, next) => {
     res.send("Usuario registrado");
 });
 
+exports.datosVacios = (User_Name, Correo_Electronico, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido,
+                        Telefono, Fecha_Nacimiento, Pais, Ciudad, Contrasena) =>{
+    if (!User_Name || !Correo_Electronico || !Primer_Nombre || !Segundo_Nombre || !Primer_Apellido || !Segundo_Apellido ||
+        !Telefono || !Fecha_Nacimiento || !Pais || !Ciudad || !Contrasena) {
+        //res.status(400).json({
+        //    estado: false,
+        //    error: `User_Name, Correo_Electronico, Primer_Nombre, Segundo_Nombre, Primer_Apellido, Segundo_Apellido, Telefono, Fecha_Nacimiento, Pais, Ciudad, Contrasena son necesarios!!`
+        //});
+        return (`Complete todos los campos`);
+    }
+    return(`Datos completos`)
+}

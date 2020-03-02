@@ -17,7 +17,13 @@ let datos = {
 };
 
 describe("registro", () => {
-    it('El correo ya esta registrado,', () => {
-        expect(functions.registro(datos));
+    it('Verificar conexion', () => {
+        expect(functions.registro());
     });
 });
+
+describe("Datos", ()=> {
+    it('Datos vacios o no', () => {
+        expect(functions.datosVacios(datos));
+    });
+})
