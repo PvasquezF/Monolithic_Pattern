@@ -2,24 +2,24 @@ require('dotenv').config();
 
 module.exports = {
     "development": {
-        "username": 'root',
-        "password": 'root',
-        "database": 'db_pazhub',
-        "host": 'localhost',
+        "username": 'admin',
+        "password": '71387138',
+        "database": 'DB_PazHUB',
+        "host": 'monolitico.cieal6lqmbdk.us-east-2.rds.amazonaws.com',
         "dialect": "mysql"
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
+        "username": "admin",
+        "password": '71387138',
+        "database": "DB_PazHUB",
+        "host": "monolitico.cieal6lqmbdk.us-east-2.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
+        "username": "admin",
+        "password": '71387138',
+        "database": "DB_PazHUB",
+        "host": "monolitico.cieal6lqmbdk.us-east-2.rds.amazonaws.com",
         "dialect": "mysql"
     }
 };
